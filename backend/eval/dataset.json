@@ -1,0 +1,122 @@
+[
+  {
+    "question": "How many users are there?",
+    "expected_sql_contains": ["count", "users"]
+  },
+  {
+    "question": "What is the total revenue?",
+    "expected_sql_contains": ["sum", "total_amount", "orders"]
+  },
+  {
+    "question": "List all products in the 'Electronics' category.",
+    "expected_sql_contains": ["products", "category"]
+  },
+  {
+    "question": "Which user has spent the most money?",
+    "expected_sql_contains": ["users", "orders", "sum", "total_amount", "group by", "order by", "desc"]
+  },
+  {
+    "question": "How many active subscriptions do we have?",
+    "expected_sql_contains": ["count", "subscriptions", "status"]
+  },
+  {
+    "question": "What is the average price of products in our database?",
+    "expected_sql_contains": ["avg", "price", "products"]
+  },
+  {
+    "question": "Show me the top 5 most expensive products.",
+    "expected_sql_contains": ["products", "order by", "price", "desc", "limit"]
+  },
+  {
+    "question": "How many orders were placed in 2023?",
+    "expected_sql_contains": ["count", "orders", "created_at"]
+  },
+  {
+    "question": "What is the total revenue by product category?",
+    "expected_sql_contains": ["sum", "total_amount", "products", "orders", "group by", "category"]
+  },
+  {
+    "question": "Find the names and emails of users who ordered a product worth more than $500.",
+    "expected_sql_contains": ["users", "orders", "products", "price", ">"]
+  },
+  {
+    "question": "Show the number of users from the United States.",
+    "expected_sql_contains": ["count", "users", "country"]
+  },
+  {
+    "question": "What is the most popular product by quantity sold?",
+    "expected_sql_contains": ["sum", "quantity", "products", "orders", "group by", "order by", "desc"]
+  },
+  {
+    "question": "List the users who have cancelled their subscriptions.",
+    "expected_sql_contains": ["users", "subscriptions", "status"]
+  },
+  {
+    "question": "How much revenue was generated from the 'pro' subscription plan?",
+    "expected_sql_contains": ["sum", "subscriptions", "plan"]
+  },
+  {
+    "question": "What is the average order value?",
+    "expected_sql_contains": ["avg", "total_amount", "orders"]
+  },
+  {
+    "question": "Find the date of the first order ever placed.",
+    "expected_sql_contains": ["min", "created_at", "orders"]
+  },
+  {
+    "question": "List all users who have never placed an order.",
+    "expected_sql_contains": ["users", "orders", "left join", "null"]
+  },
+  {
+    "question": "Show the total number of items in stock across all products.",
+    "expected_sql_contains": ["sum", "stock_qty", "products"]
+  },
+  {
+    "question": "What is the total revenue for the current month?",
+    "expected_sql_contains": ["sum", "total_amount", "orders", "created_at"]
+  },
+  {
+    "question": "How many distinct countries are our users from?",
+    "expected_sql_contains": ["count", "distinct", "country", "users"]
+  },
+  {
+    "question": "Find the product with the lowest stock quantity.",
+    "expected_sql_contains": ["products", "order by", "stock_qty", "limit"]
+  },
+  {
+    "question": "List the top 3 users with the highest number of orders.",
+    "expected_sql_contains": ["count", "orders", "users", "group by", "order by", "desc", "limit"]
+  },
+  {
+    "question": "What is the average age of our users? (If age is not available, calculate average days since account creation)",
+    "expected_sql_contains": ["avg", "users", "created_at"]
+  },
+  {
+    "question": "How many orders are currently in 'pending' status?",
+    "expected_sql_contains": ["count", "orders", "status"]
+  },
+  {
+    "question": "Find the total revenue grouped by month for the last year.",
+    "expected_sql_contains": ["sum", "total_amount", "orders", "group by", "date_trunc"]
+  },
+  {
+    "question": "List the names of products that have never been ordered.",
+    "expected_sql_contains": ["products", "orders", "left join", "null"]
+  },
+  {
+    "question": "What is the ratio of free to paid subscriptions?",
+    "expected_sql_contains": ["subscriptions", "plan"]
+  },
+  {
+    "question": "Show the users who created an account but haven't subscribed yet.",
+    "expected_sql_contains": ["users", "subscriptions", "left join", "null"]
+  },
+  {
+    "question": "Find the total revenue generated from users in Canada.",
+    "expected_sql_contains": ["sum", "total_amount", "orders", "users", "country"]
+  },
+  {
+    "question": "What is the median price of products?",
+    "expected_sql_contains": ["percentile_cont", "price", "products"]
+  }
+]
